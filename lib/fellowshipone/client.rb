@@ -5,7 +5,6 @@ require 'json'
 
 Dir[File.expand_path('../resources/*.rb', __FILE__)].each { |f| require f }
 Dir[File.expand_path('../responses/*.rb', __FILE__)].each{ |f| require f }
-binding.pry
 
 module Fellowshipone
   class Client
