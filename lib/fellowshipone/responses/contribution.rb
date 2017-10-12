@@ -2,7 +2,6 @@ module Fellowshipone
   class Contribution
 
     def self.format(res)
-      binding.pry
       response = res["contributionReceipt"]
       if response.is_a?(Array)
         response.map{|contribution| format_contribution(contribution) }
