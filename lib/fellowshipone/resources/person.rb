@@ -41,7 +41,7 @@ module Fellowshipone
       end
 
       def search_for_person_by_household(household_id)
-        get("/v1/People/Search.json?hsid=#{household_id}").results
+        get("/v1/People/Search.json?hsdid=#{household_id}").results
       end
     end
   end
