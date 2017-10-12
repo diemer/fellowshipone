@@ -2,11 +2,12 @@ module Fellowshipone
   class Contribution
 
     def self.format(res)
+      binding.pry
       response = res["contributionReceipt"]
       if response.is_a?(Array)
         response.map{|contribution| format_contribution(contribution) }
       else
-        format_contribution(response)
+        format_response(response)
       end
     end
 
@@ -24,6 +25,10 @@ module Fellowshipone
         updated_at:     contribution["lastUpdatedDate"],
         date:     contribution["receivedDate"]
       )
+    end
+
+    def self.format_response(response)
+      []
     end
   end
 end
