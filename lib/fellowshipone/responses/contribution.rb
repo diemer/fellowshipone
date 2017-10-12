@@ -16,6 +16,12 @@ module Fellowshipone
         amount:   contribution["amount"],
         fund:     contribution["fund"]["name"],
         sub_fund: contribution["subFund"]["name"],
+        person: contribution["person"]["@id"],
+        household: contribution["household"]["@id"],
+        contribution_type: contribution["contributionType"]["name"],
+        date:     contribution["receivedDate"],
+        created_at:     contribution["createdDate"],
+        updated_at:     contribution["lastUpdatedDate"],
         date:     contribution["receivedDate"]
       )
     end
