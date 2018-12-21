@@ -28,8 +28,8 @@ module Fellowshipone
         options.merge!(endReceivedDate: end_date)     if end_date
 
         params = Addressable::URI.form_encode(options)
-        response = get("/giving/v1/contributionreceipts/search.json?#{params}").results
-        Fellowshipone::Contribution.format(response)
+        response = get("/giving/v1/contributionreceipts/search.json?#{params}")
+        Fellowshipone::Contribution.format(response.results) unless response.nil?
       end
 
     end

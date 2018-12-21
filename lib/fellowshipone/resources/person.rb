@@ -33,15 +33,18 @@ module Fellowshipone
         options.merge!(communication: email) if email
 
         params = Addressable::URI.form_encode(options)
-        get("/v1/People/Search.json?#{params}").results
+        response = get("/v1/People/Search.json?#{params}")
+        response.results unless response.nil?
       end
 
       def search_people_by_date(created_at)
-        get("/v1/People/Search.json?createdDate=#{created_at}").results
+        response = get("/v1/People/Search.json?createdDate=#{created_at}")
+        response.results unless response.nil?
       end
 
       def search_for_person_by_household(household_id)
-        get("/v1/People/Search.json?hsdid=#{household_id}").results
+        response = get("/v1/People/Search.json?hsdid=#{household_id}")
+        response.results unless response.nil?
       end
     end
   end
